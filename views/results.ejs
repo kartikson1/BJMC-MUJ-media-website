@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-t0-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/flickity.css">
+        <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <title>NewsBite | Home</title>
+    <link rel="icon" type="image/png" href="/images/newslogo.png">
+</head>
+<body>
+  <!-- particles.js container --> 
+  <div id="particles-js"></div> 
+  <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <header id="top">
+        <div class="container heading">
+            <div class="row titlerow">
+              <div class="col-3 col-xs-12 col-md-4 logo">
+                  <img src="/images/newslogo.png" type="image/png">
+              </div>
+              <div class="col-6 col-xs-12 col-md-4 title">
+                <h2>NewsBite</h2>
+              </div>
+              <div class="col-3 col-xs-12 col-md-4 profile">
+                <img src="./images/user.png">
+              </div>
+            </div>
+          </div>
+          <nav class="container">
+            <ul>
+              <li class="activetab">
+                <a href="/"><p class="navtab">Home</p>
+                <img class="tabicons" src="./images/home.png"></a>
+              </li>
+              <li>
+                <a href="/articles"><p class="navtab">Articles</p>
+                <img class="tabicons" src="./images/articles.png"></a>
+              </li>
+              <li>
+                  <a href="/blogs"><p class="navtab">Blog</p>
+                  <img class="tabicons" src="./images/blogs.png"></a>
+              </li>
+              <li>
+                  <a href="/gallery"><p class="navtab">Gallery</p>
+                  <img class="tabicons" src="./images/gallery.png"></a>
+              </li>
+            </ul>
+          </nav>
+    </header>
+    <form action="/results" method="GET" > 
+        <input type="text" name="search" placeholder="Search" style="margin-left: 130px; margin-bottom: 20px;">
+        <input type="submit" style="background-color: #810000; color:yellow">
+      </form>
+    <div class="flex-container">
+      <div class="column-1">
+        <% data["articles"].forEach(function(article){ %>
+        <div class="homecard">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="<%= article['urlToImage']%>" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6><%= article["title"]%></h6>  
+            <p><%= article["description"]%></p>        
+          </div>
+        </div>
+        <% }) %>
+        <div class="homecard">
+          <a href="./temp.html">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="./images/1.PNG" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6>Coming Up: Doctors' Update on Trump's condition</h6>  
+            <p>The US president is in hospital after testing positive for COVID-19</p>        
+          </div>
+          </a>
+        </div>
+        <div class="homecard">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="./images/3.PNG" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6>Premier League: Rodriguez adds Everton third against Brighton</h6>  
+            <p>Ut eleifend sapien sed ipsum condimentum dignissim. In hac habitasse platea dictumst.</p>        
+          </div>
+        </div>
+        <div class="homecard">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="./images/4.PNG" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6>Trump: Things Going well, I think!</h6>  
+            <p>Vivamus fermentum, est eget laoreet viverra, quam eros iaculis diam, in eleifend velit dui eu nunc.</p>        
+          </div>
+        </div>
+        <div class="homecard">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="./images/5.PNG" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6>Are Indian Police trying to discount a rape case?</h6>  
+            <p>Donec vitae lacinia massa. Phasellus commodo dolor non luctus bibendum.</p>        
+          </div>
+        </div>
+        <div class="homecard">
+          <a href="./temp.html">
+          <div class="homeimg">
+            <div class="homeimgwrapper">
+              <img src="./images/1.PNG" class="item">            
+            </div>          
+          </div>
+          <div class="homecontent">
+            <h6>Coming Up: Doctors' Update on Trump's condition</h6>  
+            <p>The US president is in hospital after testing positive for COVID-19</p>        
+          </div>
+          </a>
+        </div>
+      </div>
+      <div class="column-2">
+        <div class="img-container">
+          <img class="bd-placeholder-img card-img-top" width="100%"
+              src="https://cdn.pocket-lint.com/r/s/1200x/assets/images/151442-cameras-feature-stunning-photos-from-the-national-sony-world-photography-awards-2020-image1-evuxphd3mr.jpg" alt="fujiyama">
+        </div>
+        <div class="img-container">
+          <img class="bd-placeholder-img card-img-top" width="100%"
+              src="https://images.ctfassets.net/hrltx12pl8hq/5596z2BCR9KmT1KeRBrOQa/4070fd4e2f1a13f71c2c46afeb18e41c/shutterstock_451077043-hero1.jpg?fit=fill&w=800&h=400" alt="leisure">              
+        </div>
+        <div class="img-container">
+          <img class="bd-placeholder-img card-img-top" width="100%"
+              src="https://i0.wp.com/www.streethunters.net/wp-content/uploads/2013/10/P70171791.jpg?fit=1500%2C1125&ssl=1" alt="subway">              
+        </div>
+        <div class="img-container">
+          <img class="bd-placeholder-img card-img-top" width="100%"
+              src="https://www.thestatesman.com/wp-content/uploads/2019/01/Spring-flowers.jpg" alt="flower">              
+        </div>
+        <div class="img-container">
+          <img class="bd-placeholder-img card-img-top" width="100%"
+              src="https://masteringportraitphotography.com/wp-content/uploads/2019/11/180816H281_0187-2-2-862x575.jpg" alt="puppy">              
+        </div>
+      </div>
+    </div>
+    <br><br>
+   
+    </div>
+    </div>
+    <br>
+    <br>
+
+    
+        <!-- --------------------------- Footer ---------------------------------------- -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <section class="footer">
+          <div class="container">
+            <div class="footer__content">
+              <div class="footer__heading">
+                <h2>NewsBite</h2>
+              </div>
+              <p class="mb-0">Software Engineering Project</p>
+        
+              <ul class="social__media">
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+  
+      <!-- -------------x------------- Footer --------------------x------------------- -->
+   
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>    
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/flickity.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

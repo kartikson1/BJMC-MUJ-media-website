@@ -1,0 +1,118 @@
+html,body{
+    overflow-x: hidden;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    background-image: url(../images/1.PNG);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-position: top;
+    background-position-y: 75px;
+}
+
+header{
+    margin-bottom: 0%;
+}
+
+.effect7
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect7:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
+}
+
+#particles-js{
+    display: none;
+}
+
+.article{
+    padding: 2%;
+    width:70%;
+    height:auto;
+    background:#fff;
+    margin: auto;
+    margin-top: 13%;
+    font-family: 'Roboto Slab', Helvetica, Arial, sans-serif;
+}
+
+.article h1{
+    font-weight: 800;
+}
+
+.imgwrapper{
+    width: 50%;
+    height: auto;
+    text-align: left;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+}
+
+.article .imgwrapper img{
+    width: 100%;
+}
+
+@media screen and (max-width:768px){
+    html{
+        width: 100%;
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-size: 100% 50vh;
+        background-position-y: 5%;
+        width: 100%;
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    .article{
+        width: 90%;
+    }
+
+    .article h1{
+        font-size: 170%;
+    }
+
+    .article h2{
+        font-size: 150%;
+    }
+
+    .imgwrapper{
+        width: 100%;
+    }
+}
