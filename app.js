@@ -6,11 +6,14 @@ const Blog = require('./models/Blog');
 const Article = require('./models/Article');
 const User = require('./models/User');
 var request = require("request");
+var bodyParser = require("body-parser");
+
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Connect Database
 connectDB();
@@ -37,6 +40,10 @@ app.get('/gallery', async (req, res) => {
     }
   });
 
+  app.get('/gallery/new', async(req,res)=>{
+    res.render("galleryform");
+  })
+  
 
 // @route    POST api/gallery/new
 // @desc     Add an image
@@ -50,10 +57,17 @@ app.post(
           caption: req.body.caption,
           name: req.body.name,
         });
+
   
-        const gallery = await newImage.save();
-  
-        res.json(gallery);
+        Gallery.create(newImage,function(err,newlyCreated){
+          if(err){
+            console.log("Something went wrong");
+          }
+          else{
+            
+            res.redirect("/gallery");
+          }
+        })
       } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');
@@ -89,6 +103,10 @@ app.get("/articles/:id", async(req,res) =>{
   }
 });
 
+app.get('/article/new', async(req,res)=>{
+  res.render("articleform");
+})
+
 // @route    POST api/article/new
 // @desc     Add a news article
 // @access   Public for now
@@ -96,16 +114,29 @@ app.post(
     '/article/new',
     async (req, res) => {
       try { 
+        console.log(req.body);
         const newArticle = new Article({
           title: req.body.title,
-          text: req.body.text,
+          text: req.body.textt,
           image: req.body.image,
-          name: req.body.name,
+          name: req.body.namee,
         });
+        console.log(newArticle);
+
+        Article.create(newArticle,function(err,newlyCreated){
+          if(err){
+            console.log("Something went wrong");
+          }
+          else{
+             //redirect back to campground to display
+            res.redirect("/articles");
+          }
+        })
+          
+        // const article = await newArticle.save();
+        // const articles = await Article.find().sort({ date: -1 });
   
-        const article = await newArticle.save();
-  
-        res.json(article);
+        // res.render("articles",{articles:articles});
       } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error');

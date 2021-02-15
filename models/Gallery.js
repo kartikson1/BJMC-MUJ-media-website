@@ -7,7 +7,6 @@ const GallerySchema = new Schema({
 //   },
   image: {
     type: String,
-    required : true
   },
   caption: {
     type: String
